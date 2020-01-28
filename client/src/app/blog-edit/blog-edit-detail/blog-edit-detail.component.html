@@ -1,0 +1,39 @@
+<div class="container-fluid">
+	<div class="card mb-6">
+		<div class="card-body" *ngIf="blog">
+			<form [formGroup]="blogForm" (ngSubmit)="saveBlog(blogForm.value)">
+				<div>
+					<label class="mr-3" for="image">Header Image:</label>
+					<input id="image" class="image-input" type="text" formControlName="image">
+				</div>
+				<img class="img-fluid mx-auto d-block" src="{{blog.image}}">
+				<div>
+					<label class="mr-3" for="title">Title:</label>
+					<input id="title" type="text" formControlName="title">
+				</div>
+				<div>
+					<label class="mr-3" for="body">Body:</label>
+					<app-ngx-editor [config]="bodyConfig" formControlName="body" id="body" [placeholder]="'Body...'" [spellcheck]="true"></app-ngx-editor>
+				</div>
+				<div>
+					<label class="mr-3" for="description">Description:</label><br>
+					<app-ngx-editor [config]="bodyConfig" formControlName="description" id="description" [placeholder]="'Preview Description...'" [spellcheck]="true"></app-ngx-editor>
+				</div>
+				<div class="form-check">
+					<input type="checkbox" class="form-check-input" formControlName="active" id="active">
+					<label class="form-check-label" for="active">Active</label>
+				</div>
+				<div class="text-center mt-3">
+					<button [disabled]="!blogForm.dirty && !blogForm.valid" class="btn btn-success" type="submit">SAVE</button>
+				</div>
+			</form>
+			<div class="ml-md-4 mr-md-4 blog-body" *ngIf="blog._id">
+				<span class="float-right">{{blog.date | date:'shortDate'}}</span>
+				<h3 class="card-title mt-3">Title: {{blog.title}}</h3>
+				<div class="card-text ml-1" [innerHTML]="blog.body">Body: <br>{{blog.body}}</div>
+				<h3>Description: </h3>
+				<div class="card-text ml-1" [innerHTML]="blog.description">{{blog.description}}</div>
+			</div>
+		</div>
+	</div>
+</div>

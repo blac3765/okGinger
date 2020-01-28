@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+.selector {
+	background-image: url("/assets/Home Screen Image.jpg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+body {
+	font-family: "essence_sansregular", "open sans", sans-serif !important;
+	font-weight: 100;
+	letter-spacing: 7.25px;
+	background-color: #f7f7f7 !important;
+	height: 100%;
+}
+
+@font-face {
+	font-family: 'essence_sansregular';
+	src: url('assets/fonts/essence_sans-webfont.woff2'),
+		 url('assets/fonts/essence_sans-webfont.woff');
+}

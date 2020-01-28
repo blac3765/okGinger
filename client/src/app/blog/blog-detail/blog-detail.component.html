@@ -1,0 +1,12 @@
+<div class="container-fluid">
+	<div class="card mb-6">
+		<div class="card-body" *ngIf="blog">
+			<img class="img-fluid mx-auto d-block" src="{{blog.image}}">
+			<div class="ml-md-4 mr-md-4 blog-body">
+				<span class="float-right">{{blog.date | date:'shortDate'}}</span>
+				<h3 class="card-title mt-3">{{blog.title}}</h3>
+				<div class="card-text ml-1" [innerHTML]="blog.body">{{blog.body}}</div>
+			</div>
+		</div>
+	</div>
+</div>

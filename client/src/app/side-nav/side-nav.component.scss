@@ -1,0 +1,224 @@
+:host {
+	top: 0px;
+	left: 0px;
+	height: 100%;
+
+	padding-top: 10px;
+	padding-left: 20px;
+	padding-right: 20px;
+
+	z-index: 1000;
+	background-color: white;
+	width: 400px;
+}
+
+.nav {
+	display: block;
+}
+
+a.nav-link {
+	padding-right: 0px;
+	padding: .25rem 1rem;
+	&.active {
+		font-weight: bold;
+	}
+}
+
+li > hr {
+	margin-top: 2px;
+	margin-bottom: 2px;
+}
+
+li h6 {
+	margin-top: 10px;
+	margin-bottom: 5px;
+}
+
+.main-list {
+	padding-top: 5vh;
+}
+
+ul {
+	list-style-type: none;
+	margin-block-start: 0 !important;
+}
+::ng-deep .transparent > ul {
+	background-color: transparent;
+}
+
+.transparent {
+	position: fixed;
+	width:400px;
+	height:100%;
+	left: 0px;
+	padding-left: 15px;
+	padding-right: 15px;
+	.home-logo {
+		height: 136px;
+		width: 385px;
+	}
+	.item {
+		margin-top: 4px;
+	}
+	.link {
+		margin-left: 1vw;
+	}
+	.item > a {
+		margin-top:2px;
+		padding-left: 0px;
+		font-size: 1.85em;
+		text-decoration: none;
+		color:white;
+		padding-top: 0;
+		text-shadow: 2px 2px 30px black;
+	}
+
+	.sub-nav-item {
+		margin-top: 7px;
+		a {
+			padding-left: 0px;
+			font-size: 1.25em;
+			text-decoration: none;
+			color:white;
+		}
+	}
+	.hashes {
+		font-size: 1.85em;
+		color:black;
+		float: left;
+	}
+}
+
+.background {
+	position: fixed;
+	width:400px;
+	top: 0;
+	background-color: white;
+	height:100%;
+	margin:0;
+	left: 0px;
+	padding-left: 15px;
+	padding-right: 15px;
+	.item {
+		margin-top: 4px;
+	}
+	.link {
+		margin-left: 1vw;
+	}
+	.item > a {
+		padding-left: 0px;
+		font-size: 1.85em;
+		text-decoration: none;
+		color: #a7d4bf;
+		padding-top: 0px;
+	}
+	.dropdown {
+		margin-bottom: 10px;
+	}
+	.sub-nav-item {
+		margin-top: 7px;
+		a {
+			padding-left: 0px;
+			font-size: 1.25em;
+			text-decoration: none;
+			color: #a7d4bf;
+		}
+	}
+	.hashes {
+		font-size: 1.85em;
+		color: #a7d4bf;
+		float: left;
+	}
+}
+.spacing {
+	margin-left: 400px;
+}
+.hidden {
+	display:none;
+}
+.mobile-header {
+	background-color: gray;
+	width:100%;
+	padding:5px;
+}
+.menu {
+	display: inline-block;
+	cursor: pointer;
+}
+
+.bar1, .bar2, .bar3 {
+	width: 35px;
+	height: 5px;
+	background-color: white;
+	margin: 6px 0;
+	transition: 0.4s;
+}
+
+.mobile {
+	margin-left: 0px;
+	border-bottom: 1px solid black;
+	width: 100VW;
+	background-color: gray;
+	ul {
+		padding-top: 0;
+		padding-left: 10px;
+	}
+	.navbar-brand {
+		color: black;
+	}
+	.item {
+		margin-bottom: 4px;
+	}
+	.item > a {
+		color: white;
+		text-decoration: none;
+		padding-top: 0px;
+	}
+	a.nav-link {
+		padding-right: 0px;
+		color: white;
+		text-decoration: none;
+		padding: .25rem 1rem;
+		&.active {
+			font-weight: bold;
+			color: white;
+		}
+	}
+	.hashes {
+		float: left;
+		color: white;
+	}
+}
+
+.corner-img {
+	left: 0px;
+	max-width: 100%;
+	height: auto;
+	position: absolute;
+	bottom: 0;
+}
+
+.content {
+	font-family: "Caecilia LT Std", "open sans", sans-serif !important;
+	color: #5a5a5a;
+}
+
+.subscribe {
+	position: fixed;
+	right: 0;
+	bottom: 0;
+	margin: 0;
+	padding: 0;
+}
+
+.container-fluid {
+	padding:0;
+}
+
+@font-face {
+	font-family: 'Caecilia LT Std';
+	src: url('/assets/fonts/CaeciliaLTStd-Roman.woff2'),
+		 url('/assets/fonts/CaeciliaLTStd-Roman.woff');
+	font-weight: normal;
+	font-style: normal;
+}

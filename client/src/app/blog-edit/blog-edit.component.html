@@ -1,0 +1,39 @@
+<div class="row login" *ngIf="!loggedIn">
+	<div class="center">
+		<form [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)">
+			<div>
+				<label for="email">Email:</label>
+				<input id="email" type="text" style="float:right" formControlName="email">
+			</div>
+			<div>
+				<label for="password">Password:</label>
+				<input id="password" type="password" formControlName="password">
+			</div>
+			<div class="text-center">
+				<button class="btn btn-success" type="submit">LOGIN</button>
+			</div>
+		</form>
+	</div>
+</div>
+<div class="container" *ngIf="loggedIn">
+	<div class="text-center mb-3">
+		<a routerLink="/blog/edit/new"><button class="btn btn-success" type="submit">New Blog</button></a>
+	</div>
+	<ul *ngFor="let blog of blogs;  let i = index">
+		<div class="row">
+			<div class="col-lg-3 col-12">
+				<img src="{{blog.image}}" class="img-fluid">
+			</div>
+			<div class="col-lg-9 col-12">
+				<a routerLink="/{{blog._id}}"><h3 class="title">{{blog.title}}</h3></a>
+				<div class="blog-content">
+					<div>Blog Status: {{blog.active ? 'Active' : 'Inactive'}}</div>
+					<p [innerHTML]=blog.description></p>
+					<div class="row">
+						<a class="btn btn-info center" routerLink="/blog/edit/{{blog._id}}">Edit</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</ul>
+</div>

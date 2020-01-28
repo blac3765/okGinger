@@ -1,0 +1,65 @@
+<div class="container-fluid">
+	<div class="mobile-header" *ngIf="!isDesktop">
+		<div fxLayout="row" class="header" fxLayoutAlign="space-between center">
+			<a class="menu-trigger" mat-icon-button (click)="mobileToggle()">
+				<div class="menu">
+					<div class="bar1"></div>
+					<div class="bar2"></div>
+					<div class="bar3"></div>
+				</div>
+			</a>
+			<a></a>
+		</div>
+	</div>
+	<div [class.transparent]="isDesktop && home" [class.background]="isDesktop && !home" [class.mobile] = "!isDesktop && show" [class.hidden]="!isDesktop && !show">
+		<ul class="nav flex-column main-list">
+			<li class="item" *ngIf="home">
+				<a class="nav-link" routerLink="/home"><img class="img-fluid home-logo" src="/assets/White Logo for home page.png"></a>
+			</li>
+			<li class="item" *ngIf="!home">
+				<a *ngIf="!isDesktop" class="nav-link" routerLink="/home"><img class="img-fluid home-logo" src="/assets/White Logo for home page.png"></a>
+				<a *ngIf="isDesktop" class="nav-link" routerLink="/home"><img class="img-fluid" src="/assets/Color Logo.png"></a>
+			</li>
+			<li class="item link">
+				<span class="hashes" *ngIf="route==='/about'">/// </span><a class="nav-link" routerLink="/about">ABOUT</a>
+			</li>
+			<li class="item link">
+				<span class="hashes" *ngIf="route==='/photography'">///</span><a class="nav-link" routerLink="/photography">PHOTOGRAPHY</a>
+				<ul class="dropdown" *ngIf="route==='/photography'">
+					<li class="sub-nav-item">
+						<a class="nav-link" routerLink="/photography/weddings" routerLinkActive="active">WEDDINGS</a>
+					</li>
+					<li class="sub-nav-item">
+						<a class="nav-link" routerLink="/photography/family" routerLinkActive="active">COUPLES - FAMILY</a>
+					</li>
+					<li class="sub-nav-item">
+						<a class="nav-link" routerLink="/photography/portraits" routerLinkActive="active">PORTRAITS</a>
+					</li>
+				</ul>
+			</li>
+			<li class="item link">
+				<span class="hashes" *ngIf="route==='/design'">/// </span><a class="nav-link" routerLink="/design">DESIGN</a>
+				<ul class="dropdown" *ngIf="route==='/design'">
+					<li class="sub-nav-item">
+						<a class="nav-link" routerLink="/design/branding" routerLinkActive="active">LOGO + BRANDING</a>
+					</li>
+					<li class="sub-nav-item">
+						<a class="nav-link" routerLink="/design/prints" routerLinkActive="active">INVITES + CARDS</a>
+					</li>
+				</ul>
+			</li>
+			<li class="item link">
+				<span class="hashes" *ngIf="route==='/blog'">/// </span><a class="nav-link" routerLink="/blog">BLOG</a>
+			</li>
+			<li class="item link">
+				<span class="hashes" *ngIf="route==='/contact'">/// </span><a class="nav-link" routerLink="/contact">CONTACT</a>
+			</li>
+		</ul>
+	</div>
+	<div class="content" [class.spacing]="isDesktop">
+		<router-outlet></router-outlet>
+		<div class="subscribe" *ngIf="route!=='Home'">
+			<app-subscribe ></app-subscribe>
+		</div>
+	</div>
+</div>

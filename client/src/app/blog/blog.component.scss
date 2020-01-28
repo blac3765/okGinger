@@ -1,0 +1,28 @@
+.blog {
+	padding-top: -54px;
+	letter-spacing: normal;
+	height: 100%;
+	.blog-image {
+		height:40vh;
+	}
+	.btn-info {
+		background-color: #92cecd;
+		border-color: #92cecd;
+	}
+	.title {
+		color: #92cecd;
+	}
+	.jumbotron {
+		background-image: url('/assets/Blog section image.jpg');
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+		height: 30vh;
+	}
+}
+
+@media only screen and (max-width:1000px) {
+	ul {
+		padding-left: 0;
+	}
+}

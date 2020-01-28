@@ -1,0 +1,10 @@
+<div class="container">
+	<div *ngIf="loading" class="row">
+		<div class="spinner-border center"></div>
+	</div>
+	<ngx-masonry [options]="myOptions" [useImagesLoaded]="true">
+		<div ngxMasonryItem class="masonry-item" *ngFor="let item of masonryItems">
+			<img src="{{item.picture}}" (click)="openImage(item)" (load)="imageLoaded()">
+		</div>
+	</ngx-masonry>
+</div>

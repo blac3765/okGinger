@@ -1,0 +1,22 @@
+<div class="blog">
+	<div class="jumbotron jumbotron-fluid">
+	</div>
+	<div class="container">
+		<ul *ngFor="let blog of blogs;  let i = index">
+			<div class="row">
+				<div class="col-lg-3 col-12">
+					<a routerLink="/blog/{{blog._id}}"><img src="{{blog.image}}" class="img-fluid"></a>
+				</div>
+				<div class="col-lg-9 col-12">
+					<a routerLink="/blog/{{blog._id}}"><h3 class="title">{{blog.title}}</h3></a>
+					<div class="blog-content">
+						<p [innerHTML]=blog.description></p>
+						<div class="row">
+							<a class="btn btn-info center" routerLink="/blog/{{blog._id}}">Read more...</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</ul>
+	</div>
+</div>

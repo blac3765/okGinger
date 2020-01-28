@@ -1,0 +1,26 @@
+.masonry-item {
+	img {
+		width: 400px;
+		max-width: 100%;
+	}
+	margin-top: 4px;
+}
+
+ngx-masonry {
+	margin-left: 5vw;
+}
+
+.container {
+	max-width: 100%;
+}
+
+@media only screen and (max-width: 1000px) {
+	ngx-masonry {
+		margin-left: 0;
+	}
+}
+
+.center {
+	margin-left: auto;
+	margin-right: auto;
+}
