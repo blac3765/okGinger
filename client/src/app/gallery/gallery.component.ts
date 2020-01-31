@@ -96,6 +96,15 @@ export class GalleryComponent {
 		},
 		{
 			picture: '/assets/couples/youth christmas 2019-30.jpg'
+		},
+		{
+			picture: '/assets/couples/youth christmas 2019-31.jpg'
+		},
+		{
+			picture: '/assets/couples/youth christmas 2019-32.jpg'
+		},
+		{
+			picture: '/assets/couples/youth christmas 2019-33.jpg'
 		}
 	];
 	branding = [
@@ -131,6 +140,12 @@ export class GalleryComponent {
 		},
 		{
 			picture: '/assets/logos/TCT Workbooks.jpg'
+		},
+		{
+			picture: '/assets/logos/Focus Building Logo.jpg'
+		},
+		{
+			picture: '/assets/logos/Forever Home Logo.jpg'
 		}
 	]
 	prints = [
@@ -249,6 +264,12 @@ export class GalleryComponent {
 		},
 		{
 			picture: '/assets/portraits/portraitbridal-20.jpg'
+		},
+		{
+			picture: '/assets/portraits/portraitbridal-21.jpg'
+		},
+		{
+			picture: '/assets/portraits/portraitbridal-22.jpg'
 		}
 	]
 	weddings = [
@@ -320,10 +341,7 @@ export class GalleryComponent {
 		},
 		{
 			picture:'/assets/weddings/wedding-23.jpg'
-		},
-		{
-			picture:'/assets/weddings/wedding-24.jpg'
-		},
+		}
 	]
 	error = [
 		{picture:'https://cdn.pixabay.com/photo/2016/04/24/22/30/monitor-1350918_960_720.png'}
