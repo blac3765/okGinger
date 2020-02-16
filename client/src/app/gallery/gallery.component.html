@@ -4,7 +4,7 @@
 	</div>
 	<ngx-masonry [options]="myOptions" [useImagesLoaded]="true">
 		<div ngxMasonryItem class="masonry-item" *ngFor="let item of masonryItems">
-			<img src="{{item.picture}}" (click)="openImage(item)" (load)="imageLoaded()">
+			<img src="{{item.picture}}" (load)="imageLoaded()">
 		</div>
 	</ngx-masonry>
 </div>

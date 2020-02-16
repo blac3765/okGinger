@@ -9,7 +9,7 @@
 
 	z-index: 1000;
 	background-color: white;
-	width: 400px;
+	width: 350px;
 }
 
 .nav {
@@ -48,25 +48,24 @@ ul {
 
 .transparent {
 	position: fixed;
-	width:400px;
+	width:350px;
 	height:100%;
 	left: 0px;
 	padding-left: 15px;
 	padding-right: 15px;
-	.home-logo {
-		height: 136px;
-		width: 385px;
-	}
 	.item {
 		margin-top: 4px;
 	}
 	.link {
 		margin-left: 1vw;
 	}
+	.top-link {
+		margin-top: 30px;
+	}
 	.item > a {
 		margin-top:2px;
 		padding-left: 0px;
-		font-size: 1.85em;
+		font-size: 1.5em;
 		text-decoration: none;
 		color:white;
 		padding-top: 0;
@@ -77,13 +76,13 @@ ul {
 		margin-top: 7px;
 		a {
 			padding-left: 0px;
-			font-size: 1.25em;
+			font-size: 1em;
 			text-decoration: none;
 			color:white;
 		}
 	}
 	.hashes {
-		font-size: 1.85em;
+		font-size: 1.5em;
 		color:black;
 		float: left;
 	}
@@ -91,7 +90,7 @@ ul {
 
 .background {
 	position: fixed;
-	width:400px;
+	width:350px;
 	top: 0;
 	background-color: white;
 	height:100%;
@@ -105,33 +104,41 @@ ul {
 	.link {
 		margin-left: 1vw;
 	}
+	.top-link {
+		margin-top: 30px;
+	}
 	.item > a {
 		padding-left: 0px;
-		font-size: 1.85em;
+		font-size: 1.5em;
 		text-decoration: none;
 		color: #a7d4bf;
 		padding-top: 0px;
 	}
 	.dropdown {
 		margin-bottom: 10px;
+		padding-left: 49px;
 	}
 	.sub-nav-item {
 		margin-top: 7px;
 		a {
 			padding-left: 0px;
-			font-size: 1.25em;
+			font-size: 1em;
 			text-decoration: none;
 			color: #a7d4bf;
+
+		}
+		a.nav-link {
+			padding: 0;
 		}
 	}
 	.hashes {
-		font-size: 1.85em;
+		font-size: 1.5em;
 		color: #a7d4bf;
 		float: left;
 	}
 }
 .spacing {
-	margin-left: 400px;
+	margin-left: 350px;
 }
 .hidden {
 	display:none;
@@ -217,8 +224,8 @@ ul {
 
 @font-face {
 	font-family: 'Caecilia LT Std';
-	src: url('/assets/fonts/CaeciliaLTStd-Roman.woff2'),
-		 url('/assets/fonts/CaeciliaLTStd-Roman.woff');
-	font-weight: normal;
+	src: url('/assets/fonts/CaeciliaLTStd-Light.woff2'),
+		 url('/assets/fonts/CaeciliaLTStd-Light.woff');
+	font-weight: 300;
 	font-style: normal;
 }

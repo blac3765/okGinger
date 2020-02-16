@@ -4,6 +4,9 @@ const mongoose = require('mongoose');
 const webpush = require('web-push');
 const app = express();
 const cors = require('cors');
+const path = require('path');
+const fs = require('fs');
+const mkdirp = require('mkdirp');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
@@ -51,6 +54,7 @@ app.post('/api/subscription', (req, res) => {
 })
 
 app.post('/api/sendNotification', (req, res) => {
+	console.log('start notification');
 	var notificationPayload = {
 		notification: {
 			title: 'Oklahoma Ginger',
@@ -69,7 +73,13 @@ app.post('/api/sendNotification', (req, res) => {
 			)
 		})
 	})
-	Promise.all(promises).then(() => res.sendStatus(200))
+	Promise.all(promises).then(() => {
+		console.log('done sending notifications');
+		res.sendStatus(200);
+	}).catch(err => {
+		console.log(err);
+		return err;
+	})
 });
 
 app.get('/api/blogs', (req, res) => {
@@ -96,7 +106,36 @@ app.post('/api/blog', (req, res) => {
 	return Article.findByIdAndUpdate(blog._id, blog, {upsert:true, new:true}).exec().then(r => res.json(r), err => res.status(400).json(err.stack || err));
 });
 
+app.post('/api/blog/upload-file', (req,res) => {
+	var params = req.body;
+	return Article.findById(params.articleId).exec().then(article => {
+		var buf = new Buffer.from(params.content, 'base64');
+		var fileName = new mongoose.mongo.ObjectId().toHexString() + params.ext;
+		var filePath = path.join( __dirname,'src/assets/uploads',params.articleId);
+		return new Promise((resolve,reject) => {
+			fs.writeFile(filePath, buf, (err) => {
+				console.log('uploadFile writeFile',fileName, err);
+				if(err) return reject(err);
+				resolve(fileName);
+			});
+	}).then(() => {
+			var newFile = {
+				name: params.name,	// filename
+				path: path.join(`assets/uploads/${params.articleId}`), // relative path to the file
+				type: params.type,	// filetype
+				date: params.date	// reference date
+			}
+			console.log('newFile: %o', newFile);
+			article.image = newFile.path;
+			return article.save();
+		}).catch(err => {
+			console.log('err promise: %o', err);
+		});
+	});
+})
+
 app.post('/api/login', (req, res) => {
+	console.log('login');
 	return User.findOne({email:req.body.email, password: req.body.password}).exec().then(user => {
 		res.json(user);
 	});

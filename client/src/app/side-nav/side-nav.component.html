@@ -14,13 +14,13 @@
 	<div [class.transparent]="isDesktop && home" [class.background]="isDesktop && !home" [class.mobile] = "!isDesktop && show" [class.hidden]="!isDesktop && !show">
 		<ul class="nav flex-column main-list">
 			<li class="item" *ngIf="home">
-				<a class="nav-link" routerLink="/home"><img class="img-fluid home-logo" src="/assets/White Logo for home page.png"></a>
+				<a class="nav-link" routerLink="/home"><img class="img-fluid" src="/assets/White Logo.png"></a>
 			</li>
 			<li class="item" *ngIf="!home">
-				<a *ngIf="!isDesktop" class="nav-link" routerLink="/home"><img class="img-fluid home-logo" src="/assets/White Logo for home page.png"></a>
+				<a *ngIf="!isDesktop" class="nav-link" routerLink="/home"><img class="img-fluid" src="/assets/White Logo.png"></a>
 				<a *ngIf="isDesktop" class="nav-link" routerLink="/home"><img class="img-fluid" src="/assets/Color Logo.png"></a>
 			</li>
-			<li class="item link">
+			<li class="item link top-link">
 				<span class="hashes" *ngIf="route==='/about'">/// </span><a class="nav-link" routerLink="/about">ABOUT</a>
 			</li>
 			<li class="item link">

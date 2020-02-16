@@ -1,6 +1,10 @@
 <div class="container">
-	<div class="text-center mb-3" *ngIf="!isDesktop">
+	<div class="text-center mb-3 mt-3" *ngIf="!isDesktop">
 		<a class="btn btn-info" routerLink="/{{path}}">Back</a>
 	</div>
-	<img src="{{this.image}}">
+	<div class="row">
+		<div class="col d-flex justify-content-center">
+			<img class="img-fluid" src="{{this.image}}">
+		</div>
+	</div>
 </div>

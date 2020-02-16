@@ -2,7 +2,8 @@ import { Component } 		from '@angular/core';
 import { FormBuilder } 		from '@angular/forms';
 import { ToastrService } 	from 'ngx-toastr';
 
-import { ApiService } 		from '../services/api.service';
+import { ApiService } 			from '../services/api.service';
+import { NewsletterService }	from '../services/newsletter.service';
 
 @Component({
 	selector: 'app-blog-edit',
@@ -11,9 +12,9 @@ import { ApiService } 		from '../services/api.service';
 })
 export class BlogEditComponent {
 	loginForm;
-	loggedIn:boolean = false;
+	loggedIn:boolean = true;
 	blogs:any = [];
-	constructor(private formBuilder:FormBuilder, private toast:ToastrService, private api:ApiService) {
+	constructor(private formBuilder:FormBuilder, private newsletterService:NewsletterService, private toast:ToastrService, private api:ApiService) {
 		this.api.getBlogs().then(blogs => {
 			this.blogs = blogs;
 		});
@@ -47,6 +48,12 @@ export class BlogEditComponent {
 				});
 			}
 		})
+	}
+
+	sendNotification() {
+		this.newsletterService.sendNotification().then(res => {
+			console.log('res: %o', res);
+		});
 	}
 
 }

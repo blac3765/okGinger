@@ -347,7 +347,7 @@ export class GalleryComponent {
 		{picture:'https://cdn.pixabay.com/photo/2016/04/24/22/30/monitor-1350918_960_720.png'}
 	]
 	myOptions = {
-		columnWidth: 400,
+		columnWidth: 250,
 		originLeft: true,
 		originTop: true,
 		resize: true,
@@ -380,10 +380,11 @@ export class GalleryComponent {
 		}
 	}
 
-	openImage(item) {
-		if(this.path === 'weddings' || this.path === 'portraits' || this.path === 'family')this.router.navigate(['/photography/gallery-detail'], {queryParams: {path:this.path, image:item.picture}, skipLocationChange:true});
-		else this.router.navigate(['/design/gallery-detail'], {queryParams: {path:this.path, image:item.picture}, skipLocationChange:true});
-	}
+	// TODO: Way for opening up images that Tristen hates
+	// openImage(item) {
+	// 	if(this.path === 'weddings' || this.path === 'portraits' || this.path === 'family')this.router.navigate(['/photography/gallery-detail'], {queryParams: {path:this.path, image:item.picture}, skipLocationChange:true});
+	// 	else this.router.navigate(['/design/gallery-detail'], {queryParams: {path:this.path, image:item.picture}, skipLocationChange:true});
+	// }
 
 	imageLoaded() {
 		this.loadedImages++;

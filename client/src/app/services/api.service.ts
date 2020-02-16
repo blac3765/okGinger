@@ -28,4 +28,8 @@ export class ApiService {
 		return this.http.post('/api/login', user).toPromise();
 	}
 
+	saveImage(image):Promise<any> {
+		return <Promise<any>>this.http.post('/api/blog/upload-file', image).toPromise();
+	}
+
 }

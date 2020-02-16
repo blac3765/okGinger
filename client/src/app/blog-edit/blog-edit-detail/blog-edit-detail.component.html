@@ -4,7 +4,7 @@
 			<form [formGroup]="blogForm" (ngSubmit)="saveBlog(blogForm.value)">
 				<div>
 					<label class="mr-3" for="image">Header Image:</label>
-					<input id="image" class="image-input" type="text" formControlName="image">
+					<input class="image-input" type="file" id="newFile" name="newFile" accept=".png,.jpg,.jpeg" style="color: #757575; font-size: 1.1em;" (change)="convertToBase64($event)">
 				</div>
 				<img class="img-fluid mx-auto d-block" src="{{blog.image}}">
 				<div>

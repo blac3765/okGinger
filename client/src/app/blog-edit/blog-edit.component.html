@@ -17,7 +17,8 @@
 </div>
 <div class="container" *ngIf="loggedIn">
 	<div class="text-center mb-3">
-		<a routerLink="/blog/edit/new"><button class="btn btn-success" type="submit">New Blog</button></a>
+		<a class="col-6" routerLink="/blog/edit/new"><button class="btn btn-success" type="submit">New Blog</button></a>
+		<button class="btn btn-info" (click)="sendNotification()">Send Notification</button>
 	</div>
 	<ul *ngFor="let blog of blogs;  let i = index">
 		<div class="row">
