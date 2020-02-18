@@ -4,14 +4,13 @@ import { HttpClient }	from '@angular/common/http';
 	providedIn: 'root'
 })
 export class NewsletterService {
-	url = "http://localhost:8000"
 	constructor(private http:HttpClient) {}
 
 	addPushSubscriber(sub) {
-		return this.http.post(this.url + '/api/subscription', sub);
+		return this.http.post('/api/subscription', sub);
 	}
 
 	sendNotification() {
-		return this.http.post(this.url + '/api/sendNotification', true).toPromise();
+		return this.http.post('/api/sendNotification', true).toPromise();
 	}
 }
