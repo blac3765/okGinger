@@ -6,7 +6,7 @@ const app = express();
 const cors = require('cors');
 const path = require('path');
 const fs = require('fs');
-const mkdirp = require('mkdirp');
+var nodemailer = require('nodemailer');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
@@ -17,7 +17,7 @@ app.listen(port);
 console.log('listening at port: %j', port);
 app.use('/', express.static('./client/dist/okGinger'));
 app.use(cors());
-mongoose.connect('mongodb://admin:password1@ds211829.mlab.com:11829/okginger', {useNewUrlParser:true})
+mongoose.connect('mongodb://admin:password1@ds211829.mlab.com:11829/okginger', {useNewUrlParser:true, useUnifiedTopology:true});
 
 const PUBLIC_VAPID = "BCuCcwi7d9UNaoXug1-8NL3r4UqeqM8ROkH9iCnDDhSy1_Tz14aje0dOTlgkFoN00iwILEZ4-Bss3jHoWWnlhmY";
 const PRIVATE_VAPID = "rWln4s7i27DWGTFgoqFrd8lb3njxJWSZoBV-PKD-dFs";
@@ -136,4 +136,36 @@ app.post('/api/login', (req, res) => {
 	return User.findOne({email:req.body.email, password: req.body.password}).exec().then(user => {
 		res.json(user);
 	});
+});
+
+var transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+        user: 'oklahomaginger90@gmail.com',
+        pass: 'janelle1!'
+    }
+});
+
+app.post('/api/email', (req,res) => {
+	var text = [
+		'Type: Contact Form Submission',
+		'Name:      '	+ req.body.name.toUpperCase(),
+		'Email:		'	+ req.body.email.toUpperCase(),
+		'Message:	'	+ req.body.message.toUpperCase()
+	].join('\n');
+    var mailOptions = {
+        from: 'oklahomaginger90@gmail.com',
+        to: 'tristen.b.black@gmail.com',
+        subject: 'Email contact form',
+        text: text
+	};
+    return transporter.sendMail(mailOptions, function(error, info){
+        if (error) {
+            console.log(error);
+            res.json(error);
+        } else {
+            console.log('Email sent: ' + info.response);
+            res.json(info);
+        }
+    });
 });

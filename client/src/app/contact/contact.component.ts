@@ -16,13 +16,12 @@ export class ContactComponent {
   busy = false;
   error = false;
   message = 'Submit';
-  constructor(private api:ApiService) { }
+  constructor(private api: ApiService) { }
 
   sendForm() {
     this.busy = true;
     this.message = 'Sending...';
-    console.log('this.contact: %o', this.contact);
-    this.api.sendEmail(this.contact).then((res:any) => {
+    this.api.sendEmail(this.contact).then((res: any) => {
         this.busy = false;
         if (res.accepted) {
             this.message = 'Sent';

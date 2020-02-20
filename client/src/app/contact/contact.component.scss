@@ -76,7 +76,7 @@ input[type=submit] {
 	height: 30vh;
 }
 
-.btn-primary {
-	background:#92cecd;
-	border: #92cecd;
+.btn-primary, .btn-primary-disabled, .btn-primary:hover {
+	background:#92cecd !important;
+	border: #92cecd !important;
 }
