@@ -122,9 +122,11 @@ export class BlogEditDetailComponent {
 		if(this.blog) editBlog._id = this.blog._id;
 		if(!editBlog.date) editBlog.date = new Date();
 		this.api.saveBlog(editBlog).then(async (blog:any) => {
+			console.log('blog: %o', blog);
 			if(this.newUpload) {
 				this.newUpload.articleId = blog._id;
 				this.api.saveImage(this.newUpload).then(image => {
+					console.log('image: %o', image);
 					if(blog) {
 						this.toast.success(`Blog Saved!`, 'Success!', {
 							positionClass: 'toast-top-center',
