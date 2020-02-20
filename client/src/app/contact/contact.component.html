@@ -3,14 +3,19 @@
 	</div>
 	<div class="container">
 		<p class="header">Have a funny story to tell me about? Or an idea to collaborate on? Tell me about it and let’s chat!</p>
-		<form action="https://formspree.io/sethtaylorblack@gmail.com" method="POST">
-			<label for="name">NAME</label>
-			<input type="text" id="name" name="name" class="full-width" /><br />
-			<label for="email">EMAIL ADDRESS</label>
-			<input type="email" id="email" name="_replyto" class="full-width" /><br />
-			<label for="message">MESSAGE</label>
-			<textarea name="message" id="message" cols="30" rows="10" class="full-width"></textarea><br />
-			<input type="submit" value="SEND" class="button" />
+		<form #form="ngForm" (submit)="sendForm()" novalidate>
+			<div class="form-group row">
+				<label for="name">NAME</label>
+				<input type="text" [(ngModel)]="contact.name" name="name" class="full-width" /><br />
+				<label for="email">EMAIL ADDRESS</label>
+				<input type="email" [(ngModel)]="contact.email" name="_replyto" class="full-width" /><br />
+				<label for="message">MESSAGE</label>
+				<textarea name="message" [(ngModel)]="contact.message" cols="30" rows="10" class="full-width"></textarea><br />
+			</div>
+			<div class="text-center">
+				<button *ngIf="!sent" type="submit" class="btn btn-primary mb-2" [disabled]="form.pristine || !form.valid || busy">{{message}}</button>
+				<p class="mt-4" *ngIf="sent">Thank you for reaching out to me! I will contact you soon!</p>
+			</div>
 		</form>
 	</div>
 </div>

@@ -6,7 +6,7 @@ import { HttpClient }	from '@angular/common/http';
 })
 export class ApiService {
 
-	constructor(private http:HttpClient) {}
+	constructor(private http: HttpClient) {}
 
 	getBlogs() {
 		return this.http.get('/api/blogs').toPromise();
@@ -28,8 +28,12 @@ export class ApiService {
 		return this.http.post('/api/login', user).toPromise();
 	}
 
-	saveImage(image):Promise<any> {
+	saveImage(image): Promise<any> {
 		return <Promise<any>>this.http.post('/api/blog/upload-file', image).toPromise();
+	}
+
+	sendEmail(contact) {
+		return this.http.post('/api/email', contact).toPromise();
 	}
 
 }
