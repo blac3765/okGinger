@@ -12,7 +12,7 @@ import { NewsletterService }	from '../services/newsletter.service';
 })
 export class BlogEditComponent {
 	loginForm;
-	loggedIn:boolean = true;
+	loggedIn:boolean = false;
 	blogs:any = [];
 	constructor(private formBuilder:FormBuilder, private newsletterService:NewsletterService, private toast:ToastrService, private api:ApiService) {
 		this.api.getBlogs().then(blogs => {
