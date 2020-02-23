@@ -16,7 +16,8 @@ export class SubscribeComponent {
 	convertedVapidKey;
 	constructor(private swPush: SwPush, private newsletterService: NewsletterService, private toast:ToastrService) {
 		if(!this.swPush.isEnabled) this.hide = true;
-		if (Notification.permission === "granted") {
+		var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !!navigator.platform;
+		if (iOS || !Notification || Notification.permission === "granted") {
 			this.hide = true;
 		}
 	}
