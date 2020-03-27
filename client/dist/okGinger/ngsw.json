@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1585323939565,
+  "timestamp": 1585324225992,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -129,6 +129,7 @@
         "/assets/portraits/portraitbridal-7.jpg",
         "/assets/portraits/portraitbridal-8.jpg",
         "/assets/portraits/portraitbridal-9.jpg",
+        "/assets/uploads/Screen Shot 2019-04-10 at 3.21.16 PM.png",
         "/assets/weddings/wedding-1.jpg",
         "/assets/weddings/wedding-10.jpg",
         "/assets/weddings/wedding-11.jpg",
@@ -264,6 +265,7 @@
     "/assets/portraits/portraitbridal-7.jpg": "d7024fdc823224d8f89222054169cd2b57552d43",
     "/assets/portraits/portraitbridal-8.jpg": "441fa9b9c1221e87d1a624bd209b397e7c6fd0f1",
     "/assets/portraits/portraitbridal-9.jpg": "58d1b5a52cf59d61427ea92c04410eeabac6d8bc",
+    "/assets/uploads/Screen Shot 2019-04-10 at 3.21.16 PM.png": "0bccde1338890fcec477804fa71dd459fbe27cf6",
     "/assets/weddings/wedding-1.jpg": "544114105f6cca31074c2c685fa336bc3776d33b",
     "/assets/weddings/wedding-10.jpg": "1b79f47caa96724bcdf8c068e6ed4ea2cac829dc",
     "/assets/weddings/wedding-11.jpg": "d8cbaace9c8e47e66d29c3fb6835b3cdf2ceb122",
