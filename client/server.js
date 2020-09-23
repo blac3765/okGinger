@@ -6,7 +6,7 @@ const app = express();
 const cors = require('cors');
 const path = require('path');
 const fs = require('fs');
-const mkdirp = require('mkdirp');
+const nodemailer = require('nodemailer');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
@@ -125,7 +125,6 @@ app.post('/api/blog/upload-file', (req,res) => {
 				type: params.type,	// filetype
 				date: params.date	// reference date
 			}
-			console.log('newFile: %o', newFile);
 			article.image = newFile.path;
 			return article.save();
 		}).catch(err => {
@@ -135,8 +134,34 @@ app.post('/api/blog/upload-file', (req,res) => {
 })
 
 app.post('/api/login', (req, res) => {
-	console.log('login');
 	return User.findOne({email:req.body.email, password: req.body.password}).exec().then(user => {
 		res.json(user);
 	});
 });
+
+var transporter = nodemailer.createTransport({
+	service: 'gmail',
+	auth: {
+		user: 'oklahomaginger2012@gmail.com',
+		pass: 'eleanor2020!'
+	}
+});
+
+app.post('/api/email', (req,res) => {
+	var text = 'Name:	' + req.body.name + '\n' + 'Email:	' + req.body.email + '\n' + 'Message:	' + req.body.message;
+	var mailOptions = {
+		from: 'oklahomaginger@gmail.com',
+		to: 'tristen.b.black@gmail.com',
+		subject: 'Email contact form',
+		text: text
+	}
+	return transporter.sendMail(mailOptions, function(error, info){
+		if (error) {
+			console.log(error);
+			res.json(error);
+		} else {
+			console.log('Email sent: ' + info.response);
+			res.json(info);
+		}
+	});
+})

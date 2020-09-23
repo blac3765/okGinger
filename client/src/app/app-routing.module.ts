@@ -31,7 +31,7 @@ const routes: Routes = [
 	{path:'photography/portraits',		component:GalleryComponent},
 	{path:'photography/gallery-detail', component:GalleryDetailComponent},
 	{path:'design/gallery-detail',		component:GalleryDetailComponent},
-	{path:'**',							component:HomeComponent}
+	{path:'**',							redirectTo:'/home', pathMatch:'full'}
 
 ];
 
