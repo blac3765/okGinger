@@ -6,9 +6,9 @@
 		<form #form="ngForm" (submit)="sendForm()" novalidate>
 			<div class="form-group row">
 				<label for="name">NAME</label>
-				<input type="text" [(ngModel)]="contact.name" name="name" class="full-width" /><br />
+				<input type="text" [(ngModel)]="contact.name" name="name" class="full-width" required /><br />
 				<label for="email">EMAIL ADDRESS</label>
-				<input type="email" [(ngModel)]="contact.email" name="_replyto" class="full-width" /><br />
+				<input type="email" [(ngModel)]="contact.email" name="_replyto" class="full-width" required/><br />
 				<label for="message">MESSAGE</label>
 				<textarea name="message" [(ngModel)]="contact.message" cols="30" rows="10" class="full-width"></textarea><br />
 			</div>

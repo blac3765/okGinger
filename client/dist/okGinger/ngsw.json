@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1585324225992,
+  "timestamp": 1600885167638,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -10,7 +10,7 @@
       "urls": [
         "/favicon.ico",
         "/index.html",
-        "/main.ff4178049a41770a9f99.js",
+        "/main.69fe88b358eb72032ac9.js",
         "/polyfills-es5.788967ad7f4393fda57b.js",
         "/polyfills.3d59801867953aef2a57.js",
         "/runtime.a8ef3a8272419c2e2c66.js",
@@ -290,8 +290,8 @@
     "/assets/weddings/wedding-8.jpg": "3d3e8927e449c60630dc874531dc5a5a6f91a94c",
     "/assets/weddings/wedding-9.jpg": "2755dd3703dc86f770a5cd8f348837daab719acf",
     "/favicon.ico": "9bfd13e304c52b57e180dac074e0c5ba37da6dbf",
-    "/index.html": "e32bb40bc65b0761207b61eda87f729a5786a95f",
-    "/main.ff4178049a41770a9f99.js": "ceaf0f7ed347a51a34486dd274c5f8bb47d7bea2",
+    "/index.html": "72f1c392a7ab55c5ae519f4c9f1934fbbecc2ce3",
+    "/main.69fe88b358eb72032ac9.js": "ef21086a439efb434061ed6c21a9b7861c7ceb46",
     "/polyfills-es5.788967ad7f4393fda57b.js": "e2133239aec6b810b2ac32408eb9a5452b19bbe0",
     "/polyfills.3d59801867953aef2a57.js": "6cdd1a10397274ccaf92832b85b023e809c33d1f",
     "/runtime.a8ef3a8272419c2e2c66.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",

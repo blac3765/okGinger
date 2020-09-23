@@ -6,7 +6,7 @@ const app = express();
 const cors = require('cors');
 const path = require('path');
 const fs = require('fs');
-var nodemailer = require('nodemailer');
+const nodemailer = require('nodemailer');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
@@ -139,33 +139,28 @@ app.post('/api/login', (req, res) => {
 });
 
 var transporter = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-        user: 'oklahomaginger90@gmail.com',
-        pass: 'janelle1!'
-    }
+	service: 'gmail',
+	auth: {
+		user: 'oklahomaginger2012@gmail.com',
+		pass: 'eleanor2020!'
+	}
 });
 
 app.post('/api/email', (req,res) => {
-	var text = [
-		'Type: Contact Form Submission',
-		'Name:      '	+ req.body.name.toUpperCase(),
-		'Email:		'	+ req.body.email.toUpperCase(),
-		'Message:	'	+ req.body.message.toUpperCase()
-	].join('\n');
-    var mailOptions = {
-        from: 'oklahomaginger90@gmail.com',
-        to: 'tristen.b.black@gmail.com',
-        subject: 'Email contact form',
-        text: text
-	};
-    return transporter.sendMail(mailOptions, function(error, info){
-        if (error) {
-            console.log(error);
-            res.json(error);
-        } else {
-            console.log('Email sent: ' + info.response);
-            res.json(info);
-        }
-    });
-});
+	var text = 'Name:	' + req.body.name + '\n' + 'Email:	' + req.body.email + '\n' + 'Message:	' + req.body.message;
+	var mailOptions = {
+		from: 'oklahomaginger@gmail.com',
+		to: 'tristen.b.black@gmail.com',
+		subject: 'Email contact form',
+		text: text
+	}
+	return transporter.sendMail(mailOptions, function(error, info){
+		if (error) {
+			console.log(error);
+			res.json(error);
+		} else {
+			console.log('Email sent: ' + info.response);
+			res.json(info);
+		}
+	});
+})
